@@ -1,28 +1,30 @@
-import React from 'react';
+import P1Image from '../assets/phone_images/p1.png';
+import P2Image from '../assets/phone_images/p2.png';
+import P3Image from '../assets/phone_images/p3.png';
 
 const ShowcaseSection = () => {
   const showcaseItems = [
     {
-      image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?auto=format&fit=crop&q=80",
-      title: "MacBook Setup",
-      description: "Perfect for your trading battlestation"
+      image: P1Image,
+      title: "Space Marine",
+      description: "A sticker that’s tougher than a Power Armour suit. Perfect for your phone, or facing down a Tyranid swarm!"
     },
     {
-      image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&q=80",
-      title: "iPhone Customization",
-      description: "Show off your Warhammer pride"
+      image: P2Image,
+      title: "Ork",
+      description: "For the phone that needs a little bit more 'Waaagh!' and a whole lotta' chaos. Paint it red for extra speed!"
     },
     {
-      image: "https://images.unsplash.com/photo-1544199721-1780c5fd4343?auto=format&fit=crop&q=80",
-      title: "Notebook Collection",
-      description: "For your trading strategies"
+      image: P3Image,
+      title: "Death Korps of Krieg",
+      description: "Nothing says 'personalize your device' like a sticker from a regiment that never retreats (except when they do, but only to regroup!)."
     }
   ];
 
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">Stickers in Action</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">W40K in Action</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {showcaseItems.map((item, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg">
@@ -31,7 +33,7 @@ const ShowcaseSection = () => {
                 alt={item.title}
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <div className="mt-4 p-4">
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-gray-300">{item.description}</p>
               </div>

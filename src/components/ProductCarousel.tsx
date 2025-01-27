@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import SmImage from '../assets/images/Sm.jpg';
+import OrksImage from '../assets/images/Ork.jpg';
+import DkkImage from '../assets/images/Dkk.jpg';
 
 const products = [
   {
     title: "Space Marine Traders",
-    description: "For the Emperor's Portfolio!",
-    image: "https://images.unsplash.com/photo-1635322966219-b75ed372eb01?auto=format&fit=crop&q=80",
+    description: "In the grim darkness of the far future, there is only profit!",
+    image: SmImage,
     price: "$4.99",
   },
   {
     title: "WAAAGH Street Orks",
-    description: "Green is Best, Red Goes Fasta!",
-    image: "https://images.unsplash.com/photo-1614851099473-8217f3402a5d?auto=format&fit=crop&q=80",
+    description: "WAAAGH! Let’s loot some profits!",
+    image: OrksImage,
     price: "$4.99",
   },
   {
     title: "Death Korps Dividends",
-    description: "Hold the Line, Hold the Stock!",
-    image: "https://images.unsplash.com/photo-1635322965839-7c0411e72a03?auto=format&fit=crop&q=80",
+    description: "The only certainty is sacrifice... and profit.",
+    image: DkkImage,
     price: "$4.99",
   }
 ];
