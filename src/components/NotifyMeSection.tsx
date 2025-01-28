@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail } from 'lucide-react';
 
-const PreOrderSection = () => {
+const NotifyMeSection = () => {
   const [email, setEmail] = useState('');
   const [showThankYou, setShowThankYou] = useState(false);
 
@@ -14,7 +14,7 @@ const PreOrderSection = () => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8">Pre-Order Now!</h2>
+        <h2 className="text-4xl font-bold mb-8">Join the Stickerhammer40k Revolution—Save 20%!</h2>
         <p className="text-xl text-gray-300 mb-12">
           Be among the first to get your hands on these limited edition stickers!
         </p>
@@ -34,7 +34,7 @@ const PreOrderSection = () => {
                 className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-yellow-500 hover:from-purple-600 hover:to-yellow-600 transition-colors flex items-center justify-center gap-2"
               >
                 <Mail className="w-5 h-5" />
-                Pre-order Now
+                Sign up now!
               </button>
             </div>
           </form>
@@ -42,8 +42,7 @@ const PreOrderSection = () => {
           <div className="bg-gray-800 p-8 rounded-lg max-w-md mx-auto">
             <h3 className="text-2xl font-bold mb-4">Thank You!</h3>
             <p className="text-gray-300 mb-6">
-              We've received your pre-order request. Please take a moment to share your feedback!
-            </p>
+            Thanks for joining! What kind of Warhammer stickers would you love to see? Tell us and help shape our collection!            </p>
             <a 
               href="https://forms.google.com/your-form-url" 
               target="_blank" 
@@ -59,4 +58,4 @@ const PreOrderSection = () => {
   );
 };
 
-export default PreOrderSection;
+export default NotifyMeSection;

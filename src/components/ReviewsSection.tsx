@@ -3,67 +3,83 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const reviews = [
   {
-    name: "John Doe",
+    name: "John",
     country: "United States",
-    comment: "Can't wait to stick this on my laptop! The hype is real! 🚀",
+    comment: "Just signed up! Can’t wait to slap these stickers on my laptop and gaming rig! 🚀",
     date: "2 days ago"
   },
   {
-    name: "Sarah Smith",
+    name: "Sarah",
     country: "United Kingdom",
-    comment: "Pre-ordered! Hope it looks as cool on my phone as it does online! 📱",
+    comment: "Registered and counting down the days! My phone case is going to look so epic! 📱",
     date: "1 week ago"
   },
   {
-    name: "Carlos Hernandez",
+    name: "Carlos",
     country: "Mexico",
-    comment: "Ordered mine! The Space Marine design is everything I need! ⚔️",
+    comment: "Signed up immediately! The Space Marine design is going to look insane on my water bottle! ⚔️",
     date: "4 days ago"
   },
   {
-    name: "Emily Wang",
+    name: "Emily",
     country: "China",
-    comment: "Just pre-ordered! Can’t wait to stick it on my tablet and represent! 🖥️",
+    comment: "Joined the waitlist! My tablet and notebook are begging for these stickers! 🖥️",
     date: "3 weeks ago"
   },
   {
-    name: "Michael Johnson",
+    name: "Michael",
     country: "Canada",
-    comment: "Excited for these! Hoping they live up to the Warhammer hype! 🔥",
+    comment: "Registered and hyped! These stickers are going to level up my gear! 🔥",
     date: "5 days ago"
   },
   {
-    name: "Lena Müller",
+    name: "Lena",
     country: "Germany",
-    comment: "Just placed my pre-order! My laptop is going to look epic! 🌟",
+    comment: "Signed up and ready! My laptop is about to get the Warhammer glow-up it deserves! 🌟",
     date: "2 days ago"
   },
   {
-    name: "Jack Lee",
+    name: "Jack",
     country: "Australia",
-    comment: "Pre-ordered! These stickers are gonna be a game-changer for my gear! 💥",
+    comment: "Joined the club! Can’t wait to deck out my gaming setup with these stickers! 💥",
     date: "1 week ago"
   },
   {
-    name: "Katerina Petrov",
+    name: "Katerina",
     country: "Russia",
-    comment: "Can’t wait for my sticker to arrive! It’s going straight on my tablet! ⚡",
+    comment: "Registered and excited! My tablet and sketchbook are getting a Warhammer makeover! ⚡",
     date: "2 weeks ago"
   }
 ];
 
+// Function to shuffle the reviews array
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 const ReviewsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [shuffledReviews, setShuffledReviews] = useState([]);
 
+  // Shuffle reviews on component mount
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % reviews.length);
-    }, 5000);
-    return () => clearInterval(timer);
+    setShuffledReviews(shuffleArray([...reviews]));
   }, []);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % reviews.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
+  // Auto-rotate slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % shuffledReviews.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [shuffledReviews]);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % shuffledReviews.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + shuffledReviews.length) % shuffledReviews.length);
 
   return (
     <section className="py-20 px-4 bg-gray-800/50 relative">
@@ -74,10 +90,10 @@ const ReviewsSection = () => {
             className="flex transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            {reviews.map((review, index) => (
+            {shuffledReviews.map((review, index) => (
               <div key={index} className="w-full flex-shrink-0">
                 <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
-                  <p className="text-gray-300 mb-3 text-base">"{review.comment}"</p> {/* Increased text size */}
+                  <p className="text-gray-300 mb-3 text-base">"{review.comment}"</p>
                   <div className="flex justify-between items-center text-sm">
                     <span className="font-semibold">{review.name}</span>
                     <span className="text-gray-400">{review.country}</span>

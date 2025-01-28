@@ -33,7 +33,7 @@ const Hero = () => {
         <div className="flex flex-wrap gap-4 justify-center mb-8">
           <div className="flex items-center bg-gray-800/50 px-4 py-2 rounded-full">
             <Timer className="w-5 h-5 text-yellow-400 mr-2" />
-            <span>Pre-Order Now</span>
+            <span>Get notified at launch and receive 20% off your first order!</span>
           </div>
           <div className="flex items-center bg-gray-800/50 px-4 py-2 rounded-full">
             <Sparkles className="w-5 h-5 text-purple-400 mr-2" />

@@ -1,8 +1,7 @@
-import React from 'react';
 import Hero from './components/Hero';
 import ProductCarousel from './components/ProductCarousel';
 import ShowcaseSection from './components/ShowcaseSection';
-import PreOrderSection from './components/PreOrderSection';
+import NotifyMeSection from './components/NotifyMeSection';
 import ReviewsSection from './components/ReviewsSection';
 import Footer from './components/Footer';
 import ExitPopup from './components/ExitPopup';
@@ -13,7 +12,7 @@ function App() {
       <Hero />
       <ProductCarousel />
       <ShowcaseSection />
-      <PreOrderSection />
+      <NotifyMeSection />
       <ReviewsSection />
       <Footer />
       <ExitPopup />
