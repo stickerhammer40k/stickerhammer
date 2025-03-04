@@ -1,21 +1,17 @@
-import P1Image from '../assets/phone_images/p1.png';
-import P2Image from '../assets/phone_images/p2.png';
-import P3Image from '../assets/phone_images/p3.png';
-
 const ShowcaseSection = () => {
   const showcaseItems = [
     {
-      image: P1Image,
+      image: "https://ajbahzhizxxdygqjvbff.supabase.co/storage/v1/object/public/phone_images/p1.png",
       title: "Space Marine",
       description: "A sticker that’s tougher than a Power Armour suit. Perfect for your phone, or facing down a Tyranid swarm!"
     },
     {
-      image: P2Image,
+      image: "https://ajbahzhizxxdygqjvbff.supabase.co/storage/v1/object/public/phone_images/p2.png",
       title: "Ork",
       description: "For the phone that needs a little bit more 'Waaagh!' and a whole lotta' chaos. Paint it red for extra speed!"
     },
     {
-      image: P3Image,
+      image: "https://ajbahzhizxxdygqjvbff.supabase.co/storage/v1/object/public/phone_images/p3.png",
       title: "Death Korps of Krieg",
       description: "Nothing says 'personalize your device' like a sticker from a regiment that never retreats (except when they do, but only to regroup!)."
     }

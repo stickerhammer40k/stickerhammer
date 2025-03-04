@@ -11,19 +11,19 @@ const products = [
   {
     title: "Space Marine Traders",
     description: "In the grim darkness of the far future, there is only profit!",
-    imagePath: "images/Sm.jpg",  
+    imagePath: "Sm.jpg",  
     price: "$4",
   },
   {
     title: "WAAAGH Street Orks",
     description: "WAAAGH! Let's loot some profits!",
-    imagePath: "images/Ork.jpg",  
+    imagePath: "Ork.jpg",  
     price: "$4",
   },
   {
     title: "Death Korps Dividends",
     description: "The only certainty is sacrifice... and profit.",
-    imagePath: "images/Dkk.jpg",  
+    imagePath: "Dkk.jpg",  
     price: "$4",
   }
 ];
@@ -40,27 +40,11 @@ const ProductCarousel = () => {
       try {
         const urls = {};
         
-        const { data: files, error: listError } = await supabase
-          .storage
-          .from('assets')
-          .list('images');
-          
-        if (listError) {
-          console.error('Error listing files:', listError);
-        } else {
-          console.log('Files in images folder:', files);
-        }
-        
         products.forEach(product => {
-          const { data: { publicUrl } } = supabase
-            .storage
-            .from('assets')
-            .getPublicUrl(product.imagePath);
-          
-          urls[product.imagePath] = publicUrl;
+          const { data } = supabase.storage.from('carousell_images').getPublicUrl(product.imagePath);
+          urls[product.imagePath] = data.publicUrl;
         });
         
-        console.log('Generated URLs:', urls);
         setImageUrls(urls);
         setIsLoading(false);
       } catch (err) {
@@ -155,24 +139,6 @@ const ProductCarousel = () => {
         >
           <ChevronRight className="w-6 h-6" />
         </button>
-      </div>
-      
-      {/* Debug information */}
-      <div className="mt-8 p-4 bg-gray-900 rounded-lg">
-        <h3 className="text-lg font-bold mb-2">Debug Information:</h3>
-        <p>Current Slide: {currentSlide}</p>
-        <p>Image Load Errors: {Object.keys(imageLoadErrors).length}</p>
-        <div className="mt-2">
-          <p className="font-bold">Image URLs:</p>
-          {Object.entries(imageUrls).map(([path, url]) => (
-            <div key={path} className="mt-1">
-              <p className="text-sm break-all">
-                Path: {path}<br/>
-                URL: {url}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
