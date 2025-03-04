@@ -35,6 +35,7 @@ const ExitPopup = () => {
         <button 
           onClick={() => {
             setShowPopup(false);
+            // Scroll to the email signup section with ID 'pre-order-section'
             document.getElementById('pre-order-section')?.scrollIntoView({ behavior: 'smooth' });
           }}
           className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-yellow-500 hover:from-purple-600 hover:to-yellow-600 transition-colors"

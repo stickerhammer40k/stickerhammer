@@ -10,8 +10,8 @@ const Footer = () => {
           <span className="ml-2 text-xl font-bold">StickerHammer40k</span>
         </div>
         <div className="flex items-center gap-6">
-          <a href="#" className="hover:text-purple-400 transition-colors">
-            <Instagram />
+          <a href="https://www.instagram.com/stickerhammer40k/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+            <Instagram className="w-6 h-6 text-purple-400" />
           </a>
           <span className="text-gray-500 text-sm">© 2024 StickerHammer40k. WAAAGH! Stick it, own it!</span>
         </div>
