@@ -11,19 +11,19 @@ const products = [
   {
     title: "Space Marine Traders",
     description: "In the grim darkness of the far future, there is only profit!",
-    imagePath: "images/Sm.jpg",  // Added back the 'images/' prefix
+    imagePath: "images/Sm.jpg",  
     price: "$4",
   },
   {
     title: "WAAAGH Street Orks",
     description: "WAAAGH! Let's loot some profits!",
-    imagePath: "images/Ork.jpg",  // Added back the 'images/' prefix
+    imagePath: "images/Ork.jpg",  
     price: "$4",
   },
   {
     title: "Death Korps Dividends",
     description: "The only certainty is sacrifice... and profit.",
-    imagePath: "images/Dkk.jpg",  // Added back the 'images/' prefix
+    imagePath: "images/Dkk.jpg",  
     price: "$4",
   }
 ];
@@ -40,7 +40,6 @@ const ProductCarousel = () => {
       try {
         const urls = {};
         
-        // List files in the images subfolder
         const { data: files, error: listError } = await supabase
           .storage
           .from('assets')
