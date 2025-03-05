@@ -30,7 +30,7 @@ const ExitPopup = () => {
         </button>
         <h3 className="text-2xl font-bold mb-4">Wait! Don't Miss Out!</h3>
         <p className="text-gray-300 mb-6">
-          Pre-order now and get 10% off your first sticker pack! Join the WAAAGH! of satisfied customers.
+          Get 20% off your first sticker pack! Join the WAAAGH! of satisfied customers.
         </p>
         <button 
           onClick={() => {
@@ -40,7 +40,7 @@ const ExitPopup = () => {
           }}
           className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-yellow-500 hover:from-purple-600 hover:to-yellow-600 transition-colors"
         >
-          Get 10% Off Now!
+          Get 20% Off Now!
         </button>
       </div>
     </div>
